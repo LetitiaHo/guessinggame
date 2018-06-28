@@ -4,14 +4,23 @@ function guessinggame {
 
   while [[ $answer != $files ]]
   do 
+
     echo "Guess the number of files in the current directory"
     read answer 
-    [[ $answer -gt $files ]] && echo "Your guess was too high"
-    [[ $answer -lt $files ]] && echo "Your guess was too low"
+
+    if [[ $answer -gt $files ]] 
+    then
+       echo "Your guess was too high"
+    elif [[ $answer -lt $files ]] 
+    then
+      echo "Your guess was too low"
+    fi
+
   done
 
   echo "You are correct, there are $files files in the current directory"
 }
+
 
 
 function getfilenumber {
